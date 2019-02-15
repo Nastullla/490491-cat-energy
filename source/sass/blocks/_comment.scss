@@ -27,6 +27,7 @@
 
   width: calc(100% - 40px);
   min-height: 150px;
+
   @include reset-indents;
   @include indents-outside-mobile;
   padding: 13px 13px 9px 14px;
