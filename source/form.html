@@ -8,92 +8,138 @@
   <link rel="preload" href="fonts/oswaldregular.woff2" as="font">
   <link rel="stylesheet" href="css/style.min.css">
 </head>
-<body>
+<body class="page">
+
+  <div style="display: none;">
+    <include src="build/img/sprite.svg"></include>
+  </div>
+
+    <header class="page-header page-header--nojs page__container">
+    <a class="page-header__link" href="index.html">
+      <picture>
+        <source media="(min-width: 1440px)" srcset="img/logo-desktop.svg">
+        <source media="(min-width: 768px)" srcset="img/logo-tablet.svg">
+        <img class="page-header__logo" src="index.html" srcset="img/logo-mobile.svg" width="192" height="40" alt="Логотип CAT ENERGY">
+      </picture>
+    </a>
+    <button class="page-header__toggle">
+      <span class="visually-hidden">Закрыть/открыть окно</span>
+    </button>
+
+    <nav class="page-header__nav main-nav">
+      <ul class="main-nav__list site-list">
+        <li class="site-list__item">
+          <a class="site-list__link" href="index.html">Главная</a>
+        </li>
+        <li class="site-list__item">
+          <a class="site-list__link" href="catalog.html">Каталог продукции</a>
+        </li>
+        <li class="site-list__item site-list__item--active">
+          <a class="site-list__link">Подбор программы</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
   <main>
 
-    <section class="application">
-      <h1 class="application__title">Подбор программы</h1>
-      <p class="application__text">Заполните анкету и мы подберем программу питания для вашего кота</p>
+    <section class="programm">
+      <h1 class="programm__title page__container">Подбор программы</h1>
+      <p class="programm__text page__container">
+        <span class="programm__intro">
+          Заполните анкету и мы подберем программу питания для вашего кота
+        </span>
+      </p>
 
-      <form class="application__form form-order" action="https://echo.htmlacademy.ru" method="post">
+      <form class="programm__form form-order" action="https://echo.htmlacademy.ru" method="post">
 
-        <div class="form-order__personal-data personal-data">
-          <ul class="personal-data__list">
+        <div class="form-order__wrap page__container">
+          <ul class="form-order__personal-data personal-data">
             <li class="personal-data__item">
               <label class="personal-data__label" for="name">ИМЯ:*</label>
-              <input class="personal-data__input" type="text" id="name" name="name" value="name" placeholder="Барсик">
+              <input class="personal-data__input" type="text" id="name" name="name" placeholder="Барсик" required>
             </li>
             <li class="personal-data__item">
               <label class="personal-data__label" for="weight">Вес (кг):*</label>
-              <input class="personal-data__input" type="text" id="weight" name="weight" value="weight" placeholder="7">
+              <input class="personal-data__input" type="text" id="weight" name="weight" placeholder="7" required>
             </li>
             <li class="personal-data__item">
               <label class="personal-data__label" for="age">Возраст (лет):</label>
-              <input class="personal-data__input" type="text" id="age" name="age" value="age" placeholder="7">
+              <input class="personal-data__input" type="text" id="age" name="age" placeholder="7">
             </li>
           </ul>
-        </div>
 
-        <div class="form-order__purpose purpose">
-          <ul class="purpose__list">
+          <ul class="form-order__purpose purpose">
             <li class="purpose__item">
               <input class="purpose__radio visually-hidden" type="radio" id="lose-weight" name="purpose" value="lose-weight" checked>
-              <label class="purpose__label" for="lose-weight">Похудение</label>
+              <label class="purpose__label" for="lose-weight">Похудение</label tabindex="1">
             </li>
             <li class="purpose__item">
-              <input class="purpose__radio visually-hidden" type="radio" id="weight-gain" name="purpose" value="weight-gain" checked>
+              <input class="purpose__radio visually-hidden" type="radio" id="weight-gain" name="purpose" value="weight-gain">
               <label class="purpose__label" for="weight-gain">Набор массы</label>
             </li>
             <li class="purpose__item">
-              <input class="purpose__radio visually-hidden" type="radio" id="need-advice" name="purpose" value="need-advice" checked>
+              <input class="purpose__radio visually-hidden" type="radio" id="need-advice" name="purpose" value="need-advice">
               <label class="purpose__label" for="need-advice">Не знаю (нужен ваш совет)</label>
             </li>
           </ul>
         </div>
-        
-        <div class="form-order__contact-data contact-data">
-          <p class="contact-data__title">Контактные данные (владельца кота)</p>
-          <div>
-             <label class="visually-hidden contact-data__label" for="mail">E-mail:*</label>
-             <input class="contact-data__field contact-data__field--mail" type="email" id="mail" name="mail" placeholder="Kuklachev@gmail.com">
+        <div class="form-order__contact-data contact-data programm__highlighter">
+          <div class="contact-data__title-wrapper page__container">
+            <p class="contact-data__title">Контактные данные (владельца кота)</p>
           </div>
-          <div>
-             <label class="visually-hidden contact-data__label" for="phone">Телефон:*</label>
-             <input class="contact-data__field contact-data__field--phone" type="tel" id="phone" name="phone" pattern="\+7\s[0-9]{3}\s[0-9]{2}\s[0-9]{2}" placeholder="8 (960) 900-60-90">
+          <div class="contact-data__wrap page__container">
+            <div class="contact-data__wrapper">
+              <label class="contact-data__label" for="mail">E-mail:*</label>
+              <input class="contact-data__field contact-data__field--mail" type="email" id="mail" name="mail" placeholder="Kuklachev@gmail.com" required>
+              <svg class="contact-data__svg contact-data__svg--mail" width="17" height="13">
+                <use xlink:href="#icon-mail"></use>
+              </svg>
+            </div>
+            <div class="contact-data__wrapper contact-data__wrapper--phone">
+              <label class="contact-data__label contact-data__label--phone" for="phone">Телефон:*</label>
+              <input class="contact-data__field contact-data__field--phone" type="tel" id="phone" name="phone" pattern="8\s\([0-9]{3}\)\s[0-9]{3}-[0-9]{2}-[0-9]{2}" placeholder="8 (960) 900-60-90" required>
+              <svg class="contact-data__svg contact-data__svg--phone" width="20" height="20">
+                <use xlink:href="#icon-phone"></use>
+              </svg>
+            </div>
           </div>
         </div>
 
-        <div class="form-order__comment comment">
-          <p class="comment__title">Коментарий</p>
-          <textarea class="comment__textarea" name="comment" id="comment" placeholder="Расскажите обо всех повадках кота"></textarea>
+        <div class="form-order__comment comment programm__highlighter">
+          <div class="comment__title-wrapper page__container">
+            <p class="comment__title">Комментарий</p>
+            <textarea class="comment__textarea" name="comment" id="comment" placeholder="Расскажите обо всех повадках кота"></textarea>
+          </div>
         </div>
 
-        <div class="form-order__additionally additionally">
-          <p class="additionally__title">Дополнительно</p>
-          <ul class="additionally__list">
-            <li class="additionally__item">
-              <input class="additionally__checkbox visually-hidden" type="checkbox" id="sugar-substitute" name="sugar-substitute" checked>
-              <label class="additionally__label" for="sugar-substitute">Сахарозаменитель</label>
-            </li>
-            <li class="additionally__item">
-              <input class="additionally__checkbox visually-hidden" type="checkbox" id="water" name="water" checked>
-              <label class="additionally__label" for="water">Питьевая вода</label>
-            </li>
-            <li class="additionally__item">
-              <input class="additionally__checkbox visually-hidden" type="checkbox" id="milk" name="milk">
-              <label class="additionally__label" for="milk">Молоко</label>
-            </li>
-            <li class="additionally__item">
-              <input class="additionally__checkbox visually-hidden" type="checkbox" id="vitamin" name="vitamin">
-              <label class="additionally__label" for="vitamin">Витамины</label>
-            </li>
-          </ul>
+        <div class="form-order__additionally additionally programm__highlighter">
+          <div class="additionally__title-wrapper page__container">
+            <p class="additionally__title">Дополнительно</p>
+            <ul class="additionally__list">
+              <li class="additionally__item">
+                <input class="additionally__checkbox visually-hidden" type="checkbox" id="sugar-substitute" name="sugar-substitute" checked>
+                <label class="additionally__label" for="sugar-substitute">Сахарозаменитель</label>
+              </li>
+              <li class="additionally__item">
+                <input class="additionally__checkbox visually-hidden" type="checkbox" id="water" name="water">
+                <label class="additionally__label" for="water">Питьевая вода</label>
+              </li>
+              <li class="additionally__item">
+                <input class="additionally__checkbox visually-hidden" type="checkbox" id="milk" name="milk">
+                <label class="additionally__label" for="milk">Молоко</label>
+              </li>
+              <li class="additionally__item">
+                <input class="additionally__checkbox visually-hidden" type="checkbox" id="vitamin" name="vitamin">
+                <label class="additionally__label" for="vitamin">Витамины</label>
+              </li>
+            </ul>
+          </div>
         </div>
 
-        <div class="form-order__wrapper">
-        	<button class="form-order__button button" type="submit">Отправить заявку</button>
-          <span class="form-order__footnote">* - Обязательные поля</span> 
+        <div class="form-order__wrapper page__container">
+          <button class="form-order__button button button--large" type="submit">Отправить заявку</button>
+          <span class="form-order__footnote">* &mdash; Обязательные поля</span>
         </div>
 
       </form>
@@ -101,11 +147,69 @@
 
     <section class="contacts">
       <h2 class="visually-hidden">Контакты</h2>
-    	<p class="contacts__text">Приглашаем к сотрудничеству дилеров!</p>
-    	<p class="contacts__address">ул. Большая Конюшенная, д. 19/8 Санкт-Петербург</p>
-    	<div class="contacts__map"></div>
+      <div class="contacts__wrap page__container">
+        <div class="contacts__wrapper">
+          <p class="contacts__text">Приглашаем <br> к сотрудничеству дилеров!</p>
+          <p class="contacts__address">
+            ул. Большая Конюшенная, д. 19/8
+            <span class="contacts__sity">Санкт-Петербург</span>
+          </p>
+        </div>
+      </div>
+      <div class="contacts__map">
+        <iframe class="contacts__map-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.6036253003113!2d30.320858716143494!3d59.93871916905416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca145cc1%3A0x42b32648d8238007!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LzgsINCh0LDQvdC60YIt0J_QtdGC0LXRgNCx0YPRgNCzLCAxOTExODY!5e0!3m2!1sru!2sru!4v1548016104030" height="362" style="border:0" allowfullscreen></iframe>
+      </div>
     </section>
 
   </main>
+
+  <footer class="page-footer page__container">
+    <a class="page-footer__logo" href="#">
+      <span class="visually-hidden">Логотип "CAT ENERGY"</span>
+      <img class="page-footer__img" src="img/logo-footer.svg" width="128" height="24" alt="
+      Логотип CAT ENERGY">
+    </a>
+
+    <div class="page-footer__social social">
+      <ul class="social__list">
+        <li class="social__item social__item--vk">
+          <a class="social__link social__link--vk" href="#">
+            <span class="visually-hidden">Мы Вконтакте</span>
+            <svg class="social__link-svg social__link-svg--vk" width="22" height="12">
+              <use xlink:href="#icon-vk"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="social__item">
+          <a class="social__link social__link--insta" href="#">
+            <span class="visually-hidden">Мы в инстаграм</span>
+            <svg class="social__link-svg social__link-svg--insta" width="16" height="16">
+              <use xlink:href="#icon-insta"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="social__item social__item--facebook">
+          <a class="social__link social__link--facebook" href="#">
+            <span class="visually-hidden">Мы в фейсбуке</span>
+            <svg class="social__link-svg social__link-svg--facebook" width="10" height="19">
+              <use xlink:href="#icon-fb"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <a class="page-footer__copyright copyright" href="https://htmlacademy.ru/intensive/adaptive">
+      <span class="copyright__text">HTML Academy</span>
+      <svg class="copyright__link-svg" width="41" height="42" role="img">
+        <title>Html Academy</title>
+        <use xlink:href="#htmlacademy"></use>
+      </svg>
+    </a>
+
+  </footer>
+
+  <script src="js/scripts.min.js"></script>
+  <script src="js/picturefill.min.js"></script>
 </body>
 </html>

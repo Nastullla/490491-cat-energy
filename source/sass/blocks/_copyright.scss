@@ -1,0 +1,41 @@
+.copyright {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &:hover {
+    .copyright__link-svg {
+      color: $bright-background-color;
+    }
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.copyright__text {
+  @include reset-indents;
+
+  font-family: "Arial", sans-serif;
+  font-size: 16px;
+  line-height: 16px;
+  // font-weight: 700;
+  color: $grey-font-color;
+
+  pointer-events: none;
+}
+
+.copyright__link-svg {
+  color: #666666;
+
+  transform: translateX(7px);
+
+  pointer-events: none;
+}
+
+@media (min-width: $tablet-width) {
+  .copyright {
+    width: 163px;
+  }
+}

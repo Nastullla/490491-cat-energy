@@ -1,0 +1,164 @@
+.products {
+  padding-bottom: 22px;
+
+  background: url("../img/index-can-mobile@1x.png") center 166px no-repeat;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../img/index-can-mobile@2x.png");
+    background-size: 280px auto;
+  }
+}
+
+.products__wrapper {
+  position: relative;
+
+  box-sizing: border-box;
+
+  min-height: 305px;
+  margin-bottom: 135px;
+
+  @include indents-inside-mobile;
+  padding-top: 27px;
+
+  background: #64a83b url("../img/index-background-mobile@1x.jpg") center 0 no-repeat;
+
+  z-index: -5;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background-image: url("../img/index-background-mobile@2x.jpg");
+    background-size: 320px auto;
+  }
+}
+
+.products__title {
+  @include reset-indents;
+  margin-bottom: 25px;
+
+  text-align: center;
+  font-size: 36px;
+  line-height: 36px;
+  font-weight: 400;
+  color: $light-font-color;
+}
+
+.products__text {
+  @include reset-indents;
+
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 14px;
+  // font-weight: 700;
+  color: $light-font-color;
+}
+
+.products__button {
+  @include indents-outside-mobile;
+  margin: 0 auto;
+}
+
+@media (min-width: $tablet-width) {
+  .products {
+    min-height: 795px;
+    padding-bottom: 16px;
+
+    background: url("../img/index-can-tablet@1x.jpg") 29px 202px no-repeat;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/index-can-tablet@2x.jpg");
+      background-size: 709px auto;
+    }
+  }
+
+  .products__wrapper {
+    position: static;
+
+    min-height: auto;
+
+    @include reset-indents;
+    margin-bottom: 47px;
+    padding-left: 117px;
+
+    background: none;
+  }
+
+  .products__title {
+    width: 427px;
+    margin-bottom: 43px;
+
+    text-align: left;
+    font-size: 60px;
+    line-height: 60px;
+    color: $dark-font-color;
+  }
+
+  .products__text {
+    text-align: left;
+    font-size: 20px;
+    line-height: 20px;
+    color: $dark-font-color;
+  }
+
+  .products__button {
+    margin-left: 119px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .products {
+    display: flex;
+    flex-wrap: wrap;
+
+    min-height: 696px;
+    margin-top: -170px;
+    padding-bottom: 80px;
+
+    background: url("../img/index-can-desktop@1x.png") no-repeat;
+    background-position-x: calc(50% + 117px);
+    background-position-y: 142px;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/index-can-desktop@2x.png");
+      background-size: 552px auto;
+    }
+  }
+
+  .products__col {
+    flex-basis: 50%;
+    flex-width: 50%;
+
+    &:last-child {
+      margin-top: -240px;
+    }
+  }
+
+  .products__wrapper {
+    min-height: 696px;
+
+    @include reset-indents;
+    margin-left: 50%;
+    padding-top: 222px;
+    padding-bottom: 230px;
+
+    background: #64a83b url("../img/index-background-desktop@1x.jpg") right 0 no-repeat;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background-image: url("../img/index-background-desktop@2x.jpg");
+      background-size: 720px auto;
+    }
+  }
+
+  .products__title {
+    margin-left: -528px;
+    margin-bottom: 42px;
+  }
+
+  .products__text {
+    margin-left: -528px;
+  }
+
+  .products__button {
+    margin-left: auto;
+    margin-right: 284px;
+  }
+}

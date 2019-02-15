@@ -1,0 +1,147 @@
+.product {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  padding-bottom: 24px;
+  padding-left: 19px;
+  padding-right: 19px;
+
+  border-bottom: 1px solid $grey-background-color;
+}
+
+.product__link {
+  justify-content: center;
+
+  line-height: 0;
+}
+
+.product__wrapper {
+  flex-grow: 1;
+  padding-top: 22px;
+}
+
+.product__title {
+  display: block;
+
+  width: 90px;
+
+  @include reset-indents;
+  margin-bottom: 12px;
+
+  text-transform: uppercase;
+  font-size: 16px;
+  line-height: 20px;
+  // font-weight: 700;
+  color: $dark-font-color;
+}
+
+.product__table {
+  width: 100%;
+
+  border-spacing: 0;
+}
+
+.product__caption {
+  @include reset-indents;
+
+  font-family: "Arial", sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  // font-weight: 700;
+  color: $grey-font-color;
+}
+
+.product__value {
+  @include reset-indents;
+
+  text-align: right;
+  font-family: "Arial", sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  // font-weight: 700;
+  color: $grey-font-color;
+}
+
+.product__button {
+  flex-basis: 100%;
+}
+
+@media (min-width: $tablet-width) {
+  .product {
+    box-sizing: border-box;
+
+    flex-direction: column;
+
+    @include reset-indents;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 125px;
+    margin-bottom: 16px;
+    padding-bottom: 39px;
+
+    background-color: $secondary-background-color;
+
+    border-bottom-width: 0;
+  }
+
+  .product__link {
+    display: flex;
+
+    align-items: flex-end;
+
+    height: 208px;
+    margin-top: -82px;
+    margin-bottom: 16px;
+  }
+
+  .product__wrapper {
+    padding-left: 38px;
+    padding-right: 38px;
+  }
+
+  .product__title {
+    width: 130px;
+    margin: 0 auto;
+    margin-bottom: 18px;
+
+    text-align: center;
+
+    font-size: 20px;
+  }
+
+  .product__table {
+    margin-bottom: 33px;
+  }
+
+  .product__table td {
+    padding-top: 8px;
+    padding-bottom: 7px;
+    border-bottom: 1px solid #cdcdcd;
+  }
+
+  .product__caption {
+    font-size: 16px;
+  }
+
+  .product__value {
+    font-size: 16px;
+  }
+
+  .product .product__button {
+    flex-basis: auto;
+
+    margin-left: 38px;
+    margin-right: 38px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .product {
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 104px;
+    margin-bottom: 40px;
+    // padding-bottom: 39px;
+  }
+}
